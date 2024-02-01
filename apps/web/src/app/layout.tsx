@@ -8,8 +8,8 @@ import "@repa/uilib/styles/index.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  description: "Rick and Morty",
-  title: "Small Next.JS App",
+  description: "Small Next.JS App",
+  title: "Rick and Morty",
 };
 
 export default function RootLayout({
