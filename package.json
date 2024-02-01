@@ -6,6 +6,15 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:web": "yarn workspace web dev"
+    "dev:web": "yarn workspace web dev",
+    "lint:all": "yarn workspaces foreach -A run lint"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.20.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-perfectionist": "2.5.0",
+    "eslint-plugin-react-hooks": "4.6.0"
   }
 }

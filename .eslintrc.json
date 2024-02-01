@@ -1,0 +1,44 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:perfectionist/recommended-alphabetical"],
+  "plugins": ["perfectionist", "@typescript-eslint", "import"],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc",
+        "groups": [
+          "type",
+          "react",
+          "effector-react",
+          "effector",
+          "objcet",
+          "unknown",
+          "internal-type",
+          "internal",
+          "style"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "no-console": "warn",
+    "prefer-const": "warn",
+    "default-case": "warn",
+    "no-unused-vars": "off",
+    "no-duplicate-imports": "warn",
+    "no-var": "warn",
+    "import/no-self-import": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-absolute-path": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-empty-function": "warn"
+  }
+}
