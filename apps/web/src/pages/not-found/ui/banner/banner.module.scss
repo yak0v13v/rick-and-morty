@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
+.spin {
+    transform-origin: 50% 50%;
+    animation: rotation 5s infinite linear;
+}
+
+.link {
+    margin: 0.5em auto;
+    font-size: 3vw;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+}
+
+@keyframes rotation {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
