@@ -1,9 +1,23 @@
 .header {
     position: sticky;
     top: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 140px 2fr;
     align-items: center;
-    justify-content: space-between;
     padding: 5px;
     background-color: var(--color-background-secondary)
+}
+
+.leftSlot, .rightSlot {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.leftSlot {
+    justify-content: flex-start;
+}
+
+.rightSlot {
+    justify-content: flex-end;
 }

@@ -8,14 +8,15 @@ import styles from "./page.module.scss";
 type Props = {
   children?: ReactNode;
   className?: string;
+  headerRightSlot?: ReactNode;
 };
 
-const Page = ({ children, className }: Props) => {
+const Page = ({ children, className, headerRightSlot }: Props) => {
   const classes = cn(styles.container, className);
 
   return (
     <div className={classes}>
-      <Header />
+      <Header rightSlot={headerRightSlot} />
       <main>{children}</main>
       <footer>Footer</footer>
     </div>

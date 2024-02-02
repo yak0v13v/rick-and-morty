@@ -12,13 +12,13 @@ type Props = {
   rightSlot?: ReactNode;
 };
 
-const Header = ({ className, leftSlot, rightSlot }: Props) => {
+const Header = ({ className, leftSlot = "  ", rightSlot }: Props) => {
   const classes = cn(styles.header, className);
 
   return (
     <header className={classes}>
-      <div>{leftSlot}</div>
-      <Link aria-label="Home" href={"/"}>
+      <div className={styles.leftSlot}>{leftSlot}</div>
+      <Link aria-label="Home" className={styles.link} href={"/"}>
         <Image
           alt="Rick And Morty Logo"
           height={40}
@@ -26,7 +26,7 @@ const Header = ({ className, leftSlot, rightSlot }: Props) => {
           width={140}
         ></Image>
       </Link>
-      <div>{rightSlot}</div>
+      <div className={styles.rightSlot}>{rightSlot}</div>
     </header>
   );
 };

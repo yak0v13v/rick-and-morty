@@ -1,0 +1,38 @@
+.toggle {
+    display: inline-flex;
+    padding: 2px;
+    background-color: var(--color-background-primary);
+    border-radius: 20px;
+}
+
+.label {
+    line-height: 0;
+    border-radius: 50%;
+
+    &:not(:first-child){
+        margin-left: 10px;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 1px var(--color-accent);
+    }
+
+    .icon {
+        cursor: pointer;
+        transition: transform 0.5s, color 0.5s;
+    }
+
+    &:hover .icon {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    input {
+        display: none;
+    }
+
+    input:checked + .icon {
+        color: var(--color-accent);
+        pointer-events: none;
+    }
+}
