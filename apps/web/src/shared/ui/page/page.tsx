@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { Footer } from "../footer";
 import { Header } from "../header";
 import { cn } from "@/shared/lib/hooks/cn";
 
@@ -18,7 +19,7 @@ const Page = ({ children, className, headerRightSlot }: Props) => {
     <div className={classes}>
       <Header rightSlot={headerRightSlot} />
       <main>{children}</main>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 };
