@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 
 import styles from "./theme-toggle.module.scss";
 
-const THEMES = ["light", "auto", "dark"] as const;
+const THEMES = ["light", "system", "dark"] as const;
 
 const ICONS = {
   [THEMES[0]]: LightIcon,
