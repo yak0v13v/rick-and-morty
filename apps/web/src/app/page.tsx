@@ -1,3 +1,5 @@
+import { Page } from "@/shared/ui/page";
+
 export default function Home() {
-  return <main>Hello world</main>;
+  return <Page>Hello world</Page>;
 }

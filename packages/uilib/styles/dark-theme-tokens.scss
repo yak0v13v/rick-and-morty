@@ -1,8 +1,8 @@
 /* Dark theme */
 
 :root[data-theme="dark"] {
-    --color-background-primary: oklch(19.79% 0.006 121.99deg);
-    --color-background-secondary: oklch(24.05% 0.006 285.97deg);
+    --color-background-primary: oklch(0% 0 0deg);
+    --color-background-secondary: oklch(16.84% 0 0deg);
     --color-text-primary: oklch(95% 0 0deg);
     --card-border: 1px solid oklch(35% 0 0deg);
 }
