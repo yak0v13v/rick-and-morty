@@ -3,6 +3,7 @@
     padding: 2px;
     background-color: var(--color-background-primary);
     border-radius: 20px;
+    animation: 0.3s ease-in 1 appear;
 }
 
 .label {
@@ -34,5 +35,16 @@
     input:checked + .icon {
         color: var(--color-accent);
         pointer-events: none;
+    }
+}
+
+@keyframes appear {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
