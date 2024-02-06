@@ -1,0 +1,110 @@
+.button {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--button-height);
+    padding: 0 var(--button-padding);
+    font-family: inherit;
+    font-size: var(--button-font-size);
+    line-height: 1;
+    color: var(--button-text-color);
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    background-color: var(--button-bg-color);
+    border: 1px solid var(--button-border-color, transparent);
+    border-radius: var(--button-border-radius);
+    transition: background-color 0.1s linear, color 0.1s linear, transform 0.1s linear, border 0.3s linear;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.primary {
+    --button-bg-color: var(--color-accent);
+    --button-text-color: oklch(11.44% 0.007 261deg);
+
+    &:disabled {
+        --button-bg-color: oklch(71% 0 0deg);
+        --button-text-color: oklch(52% 0 0deg);
+    }
+
+    &:not(:disabled):hover {
+        --button-bg-color: oklch(65% 0.233 132.45deg);
+        --button-text-color: oklch(0% 0 0deg);
+    }
+}
+
+.outline {
+    --button-bg-color: transparent;
+    --button-text-color: var(--color-accent);
+    --button-border-color: var(--color-accent);
+
+    &:disabled {
+        --button-text-color: oklch(71% 0 0deg);
+        --button-border-color: oklch(71% 0 0deg);
+    }
+
+    &:not(:disabled):hover {
+        --button-text-color: oklch(65% 0.233 132.45deg);
+        --button-border-color: oklch(65% 0.233 132.45deg);
+    }
+}
+
+.danger {
+    --button-bg-color: transparent;
+    --button-text-color: var(--color-accent-negotive);
+    --button-border-color: var(--color-accent-negotive);
+
+    &:disabled {
+        --button-text-color: oklch(71% 0 0deg);
+        --button-border-color: oklch(71% 0 0deg);
+    }
+
+    &:not(:disabled):hover {
+        --button-text-color: oklch(40% 0.16 27.51deg);;
+        --button-border-color: oklch(40% 0.16 27.51deg);;
+    }
+}
+
+.s {
+    --button-height: 24px;
+    --button-border-radius: 5px;
+    --button-padding: 5px;
+    --button-font-size: 12px;   
+}
+
+.m {
+    --button-height: 28px;
+    --button-border-radius: 6px;
+    --button-padding: 10px;
+    --button-font-size: 14px;
+}
+
+.l {
+    --button-height: 36px;
+    --button-border-radius: 8px;
+    --button-padding: 14px;
+    --button-font-size: 14px;
+}
+
+
+/* WIDTH */
+
+.max {
+    width: 100%;
+}
+
+.auto {
+    max-width: 100%;
+}

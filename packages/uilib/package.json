@@ -19,5 +19,8 @@
     "stylelint-order": "6.0.4",
     "stylelint-scss": "6.1.0",
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@repa/utils": "workspace:^"
   }
 }
