@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "dev:web": "yarn workspace web dev",
+    "storybook": "yarn workspace storybook storybook",
     "lint:all": "yarn workspaces foreach -A -p run lint",
     "lint-styles:all": "yarn workspaces foreach -A -p run lint-styles",
     "type-check:all": "yarn workspaces foreach -A -p run type-check"
