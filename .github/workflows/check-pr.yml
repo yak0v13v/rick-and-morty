@@ -1,0 +1,19 @@
+name: Pull requests check
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x.x
+          cache: yarn
+      - run: yarn set version 4.1.0    
+      - run: yarn install
+      - run: yarn type-check:all
+      - run: yarn lint:all
+      - run: yarn lint-styles:all
