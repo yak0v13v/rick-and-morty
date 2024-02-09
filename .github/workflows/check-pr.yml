@@ -11,10 +11,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20.x.x
-          cache: yarn
-      - run: corepack enable
-      - run: yarn set version ./.yarn/releases/yarn-4.1.0.cjs  
-      - run: yarn install
-      - run: yarn type-check:all
-      - run: yarn lint:all
-      - run: yarn lint-styles:all
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/yarn-nm-install  
+
+      - name: 🕵️ Typecheck
+        run: yarn type-check:all
+
+      - name: 🔬 ESLint
+        run: yarn lint:all
+
+      - name: 🖼️ StyleLint
+        run: yarn lint-styles:all
