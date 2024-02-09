@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: 20.x.x
           cache: yarn
+      - run: corepack enable
       - run: yarn set version ./.yarn/releases/yarn-4.1.0.cjs  
       - run: yarn install
       - run: yarn type-check:all
