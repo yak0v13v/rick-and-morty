@@ -3,7 +3,7 @@
   "packageManager": "yarn@4.1.0",
   "private": true,
   "scripts": {
-    "type-check": "tsc --noemit"
+    "type-check": "tsc --noemit -p ./"
   },
   "devDependencies": {
     "@types/node": "^20",

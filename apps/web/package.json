@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint-styles": "stylelint \"**/*.{css,scss}\"",
-    "type-check": "tsc --noemit"
+    "type-check": "tsc --noemit -p ./"
   },
   "dependencies": {
     "@repa/uilib": "workspace:^",
