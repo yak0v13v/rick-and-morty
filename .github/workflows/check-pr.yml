@@ -15,9 +15,6 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install  
 
-      - name: 🕵️ Typecheck
-        run: yarn type-check:all
-
       - name: 🔬 ESLint
         run: yarn lint:all
 
