@@ -1,8 +1,8 @@
 {
   "extends": ["next/core-web-vitals", "plugin:perfectionist/recommended-alphabetical"],
   "plugins": ["perfectionist", "@typescript-eslint", "import"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "parser": "@typescript-eslint/parser",
     "ecmaFeatures": {
       "jsx": true
     },
