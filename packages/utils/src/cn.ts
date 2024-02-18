@@ -1,4 +1,4 @@
-export function cn(...classes: Array<null | string | undefined>) {
+export function cn(...classes: Array<false | null | string | undefined>) {
   const len = classes.length;
   let str = "";
 
