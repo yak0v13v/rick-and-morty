@@ -1,0 +1,30 @@
+.title {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.description {
+    max-width: 320px;
+    padding: 5px 0 5px 5px;
+    font-size: 20px;
+    border-left: 2px solid var(--color-accent);
+}
+
+@media (width >= 500px) {
+
+    .title {
+        margin: auto;
+    }
+
+    .description {
+        max-width: none;
+        padding: 5px;
+        margin: 32px auto auto;
+        border: none;
+    }
+
+    .title, .description {
+        width: fit-content;
+    }
+}
