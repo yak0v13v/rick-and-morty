@@ -1,6 +1,6 @@
 # Rick And Morty
 
-**Web**: *TBD*
+**Web**: [*https://rick-and-morty-web-sooty.vercel.app*](https://rick-and-morty-web-sooty.vercel.app)
 
 **StoryBook**: <https://rick-and-morty-storybook.vercel.app>
 
