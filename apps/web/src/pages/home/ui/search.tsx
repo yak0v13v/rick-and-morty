@@ -1,3 +1,4 @@
+import { SearchBar } from "@/features/search";
 import { Container } from "@repa/uilib/components";
 
 import styles from "./search.module.scss";
@@ -10,6 +11,7 @@ const Search = () => {
     <Container className={styles.container} marginTop>
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.description}>{description}</p>
+      <SearchBar className={styles.searchBar} />
     </Container>
   );
 };
