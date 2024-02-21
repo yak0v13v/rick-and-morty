@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { cn } from "@/shared/lib/hooks/cn";
+import { cn } from "@/shared/lib/cn";
 import Image from "next/image";
 import Link from "next/link";
 

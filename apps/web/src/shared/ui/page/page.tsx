@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import { Footer } from "../footer";
 import { Header } from "../header";
-import { cn } from "@/shared/lib/hooks/cn";
+import { cn } from "@/shared/lib/cn";
 
 import styles from "./page.module.scss";
 
