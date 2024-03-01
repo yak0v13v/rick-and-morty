@@ -3,7 +3,7 @@ import { ResponseWithInfo } from "@/shared/types/response-with-info";
 export type CharacterRaw = {
   created: string;
   episode: string[];
-  gender: "Female" | "Male";
+  gender: Gender;
   id: number;
   img: string;
   location: {
@@ -15,11 +15,15 @@ export type CharacterRaw = {
     name: string;
     url: string;
   };
-  species: "Alien" | "Human";
-  status: "Alive" | "unknown";
+  species: Species;
+  status: Status;
   type: string;
   url: string;
 };
+
+type Species = "Alien" | "Human";
+type Status = "Alive" | "unknown";
+type Gender = "Female" | "Male";
 
 export type CharacterRawApiResponse =
   | CharacterRaw
@@ -29,3 +33,11 @@ export type CharacterRawApiResponse =
 export type Character = Omit<CharacterRaw, "episode"> & {
   episode: number[];
 };
+
+export type CharacterFilters = Partial<{
+  gender: string;
+  name: string;
+  species: Species;
+  status: Status;
+  type: string;
+}>;
