@@ -18,3 +18,9 @@ export type LocationRawApiResponse =
 export type Location = Omit<LocationRaw, "residents"> & {
   residents: number[];
 };
+
+export type LocationFilters = Partial<{
+  dimension: string;
+  name: string;
+  type: string;
+}>;
