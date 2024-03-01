@@ -1,3 +1,5 @@
+import type { EpisodeRawApiResponse } from "@/entities/episode/types";
+
 import {
   isMultipleResponse,
   isResponseWithInfo,
@@ -18,7 +20,7 @@ export async function GET(
   const apiParameter = params?.slug?.[0] ? `/${params.slug[0]}` : "";
   const url = "https://rickandmortyapi.com/api/episode" + apiParameter;
 
-  const { data } = await axios.get(url, {
+  const { data } = await axios.get<EpisodeRawApiResponse>(url, {
     params: {
       episode,
       name,

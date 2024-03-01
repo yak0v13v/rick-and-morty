@@ -1,4 +1,6 @@
-export type Character = {
+import { ResponseWithInfo } from "@/shared/types/response-with-info";
+
+export type CharacterRaw = {
   created: string;
   episode: string[];
   gender: "Female" | "Male";
@@ -19,12 +21,11 @@ export type Character = {
   url: string;
 };
 
-export type ResponseWithInfo<T> = {
-  info: unknown;
-  results: T[];
-};
+export type CharacterRawApiResponse =
+  | CharacterRaw
+  | CharacterRaw[]
+  | ResponseWithInfo<CharacterRaw>;
 
-export type CharacterApiResponse =
-  | Character
-  | Character[]
-  | ResponseWithInfo<Character>;
+export type Character = Omit<CharacterRaw, "episode"> & {
+  episode: number[];
+};

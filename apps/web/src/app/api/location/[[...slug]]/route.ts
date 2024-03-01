@@ -1,3 +1,5 @@
+import type { LocationRawApiResponse } from "@/entities/location/types";
+
 import {
   isMultipleResponse,
   isResponseWithInfo,
@@ -18,7 +20,7 @@ export async function GET(
   const apiParameter = params?.slug?.[0] ? `/${params.slug[0]}` : "";
   const url = "https://rickandmortyapi.com/api/location" + apiParameter;
 
-  const { data } = await axios.get(url, {
+  const { data } = await axios.get<LocationRawApiResponse>(url, {
     params: {
       episode,
       name,

@@ -1,10 +1,10 @@
-import { CharacterApiResponse } from "./types";
 import {
   isMultipleResponse,
   isResponseWithInfo,
   modifyCharacter,
   normalizeCharacters,
 } from "./utils";
+import { CharacterRawApiResponse } from "@/entities/character/types";
 import axios from "axios";
 
 export async function GET(
@@ -22,7 +22,7 @@ export async function GET(
   const apiParameter = params?.slug?.[0] ? `/${params.slug[0]}` : "";
   const url = "https://rickandmortyapi.com/api/character" + apiParameter;
 
-  const { data } = await axios.get<CharacterApiResponse>(url, {
+  const { data } = await axios.get<CharacterRawApiResponse>(url, {
     params: {
       gender,
       name,
