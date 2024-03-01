@@ -4,17 +4,13 @@ import { BaseRequest } from "@/shared/api/baseRequest";
 import { NormalizedData } from "@/shared/types/normalized-data";
 
 class EpisodeAPI extends BaseRequest {
-  getAll(filters?: EpisodeFilters) {
-    return this.get<NormalizedData<Episode>>("/", filters);
-  }
+  getAll = (filters?: EpisodeFilters) =>
+    this.get<NormalizedData<Episode>>("/", filters);
 
-  getMultiple(ids: number[]) {
-    return this.get<Episode[]>(`/${ids}`, null);
-  }
+  getMultiple = (ids: number[]) =>
+    this.get<NormalizedData<Episode>>(`/[${ids}]`, null);
 
-  getSingle(id: number) {
-    return this.get<Episode>(`/${id}`, null);
-  }
+  getSingle = (id: number) => this.get<Episode>(`/${id}`, null);
 }
 
 export const episodeAPI = new EpisodeAPI({
