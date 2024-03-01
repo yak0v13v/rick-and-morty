@@ -18,3 +18,8 @@ export type EpisodeRawApiResponse =
 export type Episode = Omit<EpisodeRaw, "characters"> & {
   characters: number[];
 };
+
+export type EpisodeFilters = Partial<{
+  episode: string; // filter by the given episode code
+  name: string;
+}>;
