@@ -4,17 +4,13 @@ import { BaseRequest } from "@/shared/api/baseRequest";
 import { NormalizedData } from "@/shared/types/normalized-data";
 
 class LocationAPI extends BaseRequest {
-  getAll(filters?: LocationFilters) {
-    return this.get<NormalizedData<Location>>("/", filters);
-  }
+  getAll = (filters?: LocationFilters) =>
+    this.get<NormalizedData<Location>>("/", filters);
 
-  getMultiple(ids: number[]) {
-    return this.get<Location[]>(`/${ids}`, null);
-  }
+  getMultiple = (ids: number[]) =>
+    this.get<NormalizedData<Location>>(`/${ids}`, null);
 
-  getSingle(id: number) {
-    return this.get<Location>(`/${id}`, null);
-  }
+  getSingle = (id: number) => this.get<Location>(`/${id}`, null);
 }
 
 export const locationAPI = new LocationAPI({
