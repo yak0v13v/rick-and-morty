@@ -1,14 +1,14 @@
 import type { Episode, EpisodeFilters } from "../types";
 
 import { BaseRequest } from "@/shared/api/baseRequest";
-import { ResponseWithInfo } from "@/shared/types/response-with-info";
+import { NormalizedData } from "@/shared/types/normalized-data";
 
 class EpisodeAPI extends BaseRequest {
   getAll(filters?: EpisodeFilters) {
-    return this.get<ResponseWithInfo<Episode>>("/", filters);
+    return this.get<NormalizedData<Episode>>("/", filters);
   }
 
-  getMultiple(ids: string | string[]) {
+  getMultiple(ids: number[]) {
     return this.get<Episode[]>(`/${ids}`, null);
   }
 

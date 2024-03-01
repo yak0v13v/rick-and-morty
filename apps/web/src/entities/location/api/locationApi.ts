@@ -1,14 +1,14 @@
 import type { Location, LocationFilters } from "../types";
 
 import { BaseRequest } from "@/shared/api/baseRequest";
-import { ResponseWithInfo } from "@/shared/types/response-with-info";
+import { NormalizedData } from "@/shared/types/normalized-data";
 
 class LocationAPI extends BaseRequest {
   getAll(filters?: LocationFilters) {
-    return this.get<ResponseWithInfo<Location>>("/", filters);
+    return this.get<NormalizedData<Location>>("/", filters);
   }
 
-  getMultiple(ids: string | string[]) {
+  getMultiple(ids: number[]) {
     return this.get<Location[]>(`/${ids}`, null);
   }
 

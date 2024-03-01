@@ -1,14 +1,14 @@
 import type { Character, CharacterFilters } from "../types";
 
 import { BaseRequest } from "@/shared/api/baseRequest";
-import { ResponseWithInfo } from "@/shared/types/response-with-info";
+import { NormalizedData } from "@/shared/types/normalized-data";
 
 class CharacterAPI extends BaseRequest {
   getAll(filters?: CharacterFilters) {
-    return this.get<ResponseWithInfo<Character>>("/", filters);
+    return this.get<NormalizedData<Character>>("/", filters);
   }
 
-  getMultiple(ids: string | string[]) {
+  getMultiple(ids: number[]) {
     return this.get<Character[]>(`/${ids}`, null);
   }
 
