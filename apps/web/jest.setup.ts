@@ -1,5 +1,4 @@
-import { mockServer } from "./src/shared/api/mocks/mockServer";
+import nock from "nock";
 
-beforeAll(() => mockServer.listen());
-afterEach(() => mockServer.resetHandlers());
-afterAll(() => mockServer.close());
+beforeAll(() => nock.disableNetConnect());
+afterAll(() => nock.enableNetConnect());
