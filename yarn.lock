@@ -2011,6 +2011,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@farfetched/core@npm:^0.11.4":
+  version: 0.11.4
+  resolution: "@farfetched/core@npm:0.11.4"
+  peerDependencies:
+    effector: ^23.0.0
+  checksum: 10c0/03f7afba771e0b4eef55f9dc574e5830cc31018f38a843722e626f5f8cd66a27e4c44993fbd15581d02e7e20e866f1ee908301f5bf7a23cf55ae5b9aa515a7ea
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.6.0":
   version: 1.6.0
   resolution: "@floating-ui/core@npm:1.6.0"
@@ -14539,6 +14548,7 @@ __metadata:
   resolution: "web@workspace:apps/web"
   dependencies:
     "@effector/next": "npm:^0.7.0"
+    "@farfetched/core": "npm:^0.11.4"
     "@gravity-ui/axios-wrapper": "npm:^1.4.1"
     "@repa/uilib": "workspace:^"
     "@svgr/webpack": "npm:^8.1.0"
