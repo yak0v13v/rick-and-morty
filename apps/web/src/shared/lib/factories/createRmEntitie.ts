@@ -1,4 +1,4 @@
-import type { NormalizedData } from "../types/normalized-data";
+import type { NormalizedData } from "../../types/normalized-data";
 
 import { createQuery } from "@farfetched/core";
 import { createEvent, createStore, Effect, sample } from "effector";

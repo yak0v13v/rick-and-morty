@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    swcPlugins: [
+      [
+        "effector-swc-plugin",
+        {
+          factories: ["./src/shared/lib/factories", "@/shared/lib/factories"],
+        },
+      ],
+    ],
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

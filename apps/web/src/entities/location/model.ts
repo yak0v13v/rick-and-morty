@@ -1,7 +1,7 @@
 import type { Location, LocationFilters } from "./types";
 
 import { locationAPI } from "./api/locationApi";
-import { createRmEntitie } from "@/shared/lib/createRmEntitie";
+import { createRmEntitie } from "@/shared/lib/factories";
 import { NormalizedData } from "@/shared/types/normalized-data";
 import { createEffect } from "effector";
 

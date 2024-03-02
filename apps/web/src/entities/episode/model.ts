@@ -1,7 +1,7 @@
 import type { Episode, EpisodeFilters } from "./types";
 
 import { episodeAPI } from "./api/episodeApi";
-import { createRmEntitie } from "@/shared/lib/createRmEntitie";
+import { createRmEntitie } from "@/shared/lib/factories";
 import { NormalizedData } from "@/shared/types/normalized-data";
 import { createEffect } from "effector";
 
