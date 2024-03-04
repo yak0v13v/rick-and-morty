@@ -5,7 +5,7 @@ export type CharacterRaw = {
   episode: string[];
   gender: Gender;
   id: number;
-  img: string;
+  image: string;
   location: {
     name: string;
     url: string;

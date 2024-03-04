@@ -8,7 +8,7 @@ export const fetchSuggestions = createEvent<GetSuggestionsParams>();
 
 const suggetstionQuery = createQuery({ handler: searchApi.getSuggestions });
 
-const $suggestions = createStore<Suggestions>({});
+export const $suggestions = createStore<Suggestions>({});
 
 $suggestions.on(
   suggetstionQuery.started,

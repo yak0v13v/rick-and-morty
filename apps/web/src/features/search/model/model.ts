@@ -27,11 +27,9 @@ sample({
   target: fetchSuggestions,
 });
 
-export const $$search = { setCategory, setSearchValue };
-
-/*
-{
-    [category]: { [search string]: data }
-}
-
-*/
+export const $$search = {
+  setCategory,
+  setSearchValue,
+  $category,
+  $searchValue,
+};
