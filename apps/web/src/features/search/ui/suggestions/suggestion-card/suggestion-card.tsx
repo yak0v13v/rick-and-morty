@@ -6,8 +6,8 @@ import styles from "./suggestion-card.module.scss";
 type Props = {
   category: string;
   id: number;
-  img?: string;
-  name?: string;
+  img?: null | string;
+  name?: null | string;
 };
 
 const SuggestionCard = ({ name, img, category, id }: Props) => {

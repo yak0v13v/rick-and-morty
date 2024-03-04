@@ -1,7 +1,9 @@
 import { $$search } from "../../model/model";
 import { $suggestions } from "../../model/suggestion";
 import { SuggestionCard } from "./suggestion-card/suggestion-card";
+import { ErrorIcon } from "@/shared/ui/error-icon";
 import { Spinner } from "@/shared/ui/spinner";
+import { isAxiosError } from "axios";
 import { useStoreMap, useUnit } from "effector-react";
 import { Fragment } from "react";
 
@@ -21,30 +23,28 @@ const Suggestions = () => {
   if (payload?.result) {
     return (
       <div className={styles.container}>
-        <div>
-          {payload.result.ids.map((id) => {
-            if (payload.result) {
-              const key = category + id;
-              const suggestion = payload.result.data[id];
-              const name = "name" in suggestion ? suggestion.name : "";
-              const image = "image" in suggestion ? suggestion.image : "";
+        {payload.result.ids.map((id) => {
+          if (payload.result) {
+            const key = category + id;
+            const suggestion = payload.result.data[id];
+            const name = "name" in suggestion ? suggestion.name : null;
+            const image = "image" in suggestion ? suggestion.image : null;
 
-              return (
-                <Fragment key={key}>
-                  <SuggestionCard
-                    category={category}
-                    id={id}
-                    img={image}
-                    name={name}
-                  />
-                  <div className={styles.divider} />
-                </Fragment>
-              );
-            }
+            return (
+              <Fragment key={key}>
+                <SuggestionCard
+                  category={category}
+                  id={id}
+                  img={image}
+                  name={name}
+                />
+                <div className={styles.divider} />
+              </Fragment>
+            );
+          }
 
-            return null;
-          })}
-        </div>
+          return null;
+        })}
       </div>
     );
   }
@@ -57,7 +57,17 @@ const Suggestions = () => {
     );
   }
 
-  return <div className={styles.container}></div>;
+  if (payload?.error) {
+    return (
+      <div className={styles.container}>
+        <ErrorIcon
+          text={payload.error.status === 404 ? "Not Found" : "Error"}
+        />
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export { Suggestions };
