@@ -17,7 +17,7 @@ allFx.use(locationAPI.getAll);
 multipleFx.use(locationAPI.getMultiple);
 singleFx.use(locationAPI.getSingle);
 
-export const $$episode = createRmEntitie<LocationFilters, Location>({
+export const $$location = createRmEntitie<LocationFilters, Location>({
   allFx,
   multipleFx,
   singleFx,

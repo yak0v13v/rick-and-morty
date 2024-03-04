@@ -1,8 +1,12 @@
 "use client";
 
+import { CATEGORIES } from "../constants";
+import { $$search } from "../model/model";
 import SearchIcon from "./search.svg";
+import { Suggestions } from "./suggestions/suggestions";
 import { cn } from "@/shared/lib/cn";
-import { type FormEventHandler } from "react";
+import { useUnit } from "effector-react";
+import { ChangeEventHandler, type FormEventHandler } from "react";
 
 import styles from "./search-bar.module.scss";
 
@@ -11,7 +15,20 @@ type Props = {
 };
 
 const SearchBar = ({ className }: Props) => {
+  const [setCategory, setSearchValue] = useUnit([
+    $$search.setCategory,
+    $$search.setSearchValue,
+  ]);
+
   const classes = cn(styles.container, className);
+
+  const onSearchChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const onCategoryChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
+    setCategory(e.target.value);
+  };
 
   const formSubmitHandler: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -22,20 +39,25 @@ const SearchBar = ({ className }: Props) => {
       <input
         autoComplete="off"
         className={styles.search}
+        onChange={onSearchChange}
         placeholder="Rick"
         role="search"
         type="text"
       />
 
-      <select className={styles.select}>
-        <option value="character">Characters</option>
-        <option value="location">Locations</option>
-        <option value="episode">Episodes</option>
+      <select className={styles.select} onChange={onCategoryChange}>
+        {CATEGORIES.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
       </select>
 
       <button aria-label="search" className={styles.btn} type="submit">
         <SearchIcon />
       </button>
+
+      <Suggestions />
     </form>
   );
 };
