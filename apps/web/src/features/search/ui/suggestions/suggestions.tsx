@@ -1,6 +1,7 @@
 import { $$search } from "../../model/model";
 import { $suggestions } from "../../model/suggestion";
 import { SuggestionCard } from "./suggestion-card/suggestion-card";
+import { Spinner } from "@/shared/ui/spinner";
 import { useStoreMap, useUnit } from "effector-react";
 import { Fragment } from "react";
 
@@ -17,7 +18,7 @@ const Suggestions = () => {
     fn: (state, [category, search]) => state?.[category]?.[search],
   });
 
-  if (payload && payload?.result) {
+  if (payload?.result) {
     return (
       <div className={styles.container}>
         <div>
@@ -44,6 +45,14 @@ const Suggestions = () => {
             return null;
           })}
         </div>
+      </div>
+    );
+  }
+
+  if (payload?.pending) {
+    return (
+      <div className={styles.container}>
+        <Spinner />
       </div>
     );
   }
