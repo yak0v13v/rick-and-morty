@@ -17,9 +17,10 @@ type Props = {
 
 const SearchBar = ({ className }: Props) => {
   const [ref, isVisible] = useSuggestions<HTMLFormElement>();
-  const [setCategory, setSearchValue] = useUnit([
+  const [setCategory, setSearchValue, submitSearch] = useUnit([
     $$search.setCategory,
     $$search.setSearchValue,
+    $$search.submitSearch,
   ]);
 
   const classes = cn(styles.container, className);
@@ -34,6 +35,7 @@ const SearchBar = ({ className }: Props) => {
 
   const formSubmitHandler: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    submitSearch();
   };
 
   return (
