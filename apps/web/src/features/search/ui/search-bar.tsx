@@ -1,6 +1,7 @@
 "use client";
 
 import { CATEGORIES } from "../constants";
+import { useSuggestions } from "../lib/use-suggestions";
 import { $$search } from "../model/model";
 import SearchIcon from "./search.svg";
 import { Suggestions } from "./suggestions/suggestions";
@@ -15,6 +16,7 @@ type Props = {
 };
 
 const SearchBar = ({ className }: Props) => {
+  const [ref, isVisible] = useSuggestions<HTMLFormElement>();
   const [setCategory, setSearchValue] = useUnit([
     $$search.setCategory,
     $$search.setSearchValue,
@@ -35,12 +37,12 @@ const SearchBar = ({ className }: Props) => {
   };
 
   return (
-    <form className={classes} onSubmit={formSubmitHandler}>
+    <form className={classes} onSubmit={formSubmitHandler} ref={ref}>
       <input
         autoComplete="off"
         className={styles.search}
         onChange={onSearchChange}
-        placeholder="Rick"
+        placeholder="Rick, Morty, Summer and others"
         role="search"
         type="text"
       />
@@ -57,7 +59,7 @@ const SearchBar = ({ className }: Props) => {
         <SearchIcon />
       </button>
 
-      <Suggestions />
+      {isVisible && <Suggestions />}
     </form>
   );
 };
