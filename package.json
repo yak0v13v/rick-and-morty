@@ -10,7 +10,8 @@
     "storybook": "yarn workspace storybook storybook",
     "lint:all": "yarn workspaces foreach -A -p run lint",
     "lint-styles:all": "yarn workspaces foreach -A -p run lint-styles",
-    "type-check:all": "yarn workspaces foreach -A -p run type-check"
+    "type-check:all": "yarn workspaces foreach -A -p run type-check",
+    "test:all": "yarn workspaces foreach -A -p run test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "6.20.0",

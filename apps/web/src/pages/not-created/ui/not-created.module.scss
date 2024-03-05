@@ -1,0 +1,12 @@
+.container {
+    width: fit-content;
+    margin: auto;
+}
+
+.link {
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent)
+}

@@ -29,6 +29,7 @@
         "newlines-between": "always"
       }
     ],
+    "perfectionist/sort-objects": "off",
     "no-console": "warn",
     "prefer-const": "warn",
     "default-case": "warn",

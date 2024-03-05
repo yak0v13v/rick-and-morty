@@ -1,0 +1,33 @@
+.container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    max-height: min(31vh, 400px);
+    padding: 5px;
+    margin-top: 10px;
+    overflow-y: auto;
+    background-color: var(--color-background-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgb(149 149 149 / 45%);
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-accent);
+        border-radius:16px
+    }
+}
+
+.divider {
+    height: 1px;
+    margin: 5px 0;
+    background-color: var(--color-border-primary);
+
+    &:last-child {
+        display: none;
+    }
+}

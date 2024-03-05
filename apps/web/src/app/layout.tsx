@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Providers } from "./providers";
+import { EffectorNext } from "@effector/next";
 import { Inter } from "next/font/google";
 
 import "@repa/uilib/styles/index.scss";
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <EffectorNext>
+          <Providers>{children}</Providers>
+        </EffectorNext>
       </body>
     </html>
   );
