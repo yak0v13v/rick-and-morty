@@ -1,4 +1,4 @@
-import { $$search } from "../../model/model";
+import { $$search } from "../../model/search";
 import { $suggestions } from "../../model/suggestion";
 import { SuggestionCard } from "./suggestion-card/suggestion-card";
 import { ErrorIcon } from "@/shared/ui/error-icon";

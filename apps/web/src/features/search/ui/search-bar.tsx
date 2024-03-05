@@ -2,7 +2,7 @@
 
 import { CATEGORIES } from "../constants";
 import { useSuggestions } from "../lib/use-suggestions";
-import { $$search } from "../model/model";
+import { $$search } from "../model/search";
 import SearchIcon from "./search.svg";
 import { Suggestions } from "./suggestions/suggestions";
 import { cn } from "@/shared/lib/cn";
