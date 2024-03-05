@@ -1,10 +1,10 @@
 "use client";
 
-import { CATEGORIES } from "../constants";
-import { useSuggestions } from "../lib/use-suggestions";
-import { $$search } from "../model/search";
+import { CATEGORIES } from "../../constants";
+import { useSuggestions } from "../../lib/use-suggestions";
+import { $$search } from "../../model/search";
+import { Suggestions } from "../suggestions/suggestions";
 import SearchIcon from "./search.svg";
-import { Suggestions } from "./suggestions/suggestions";
 import { cn } from "@/shared/lib/cn";
 import { useUnit } from "effector-react";
 import { ChangeEventHandler, type FormEventHandler } from "react";
