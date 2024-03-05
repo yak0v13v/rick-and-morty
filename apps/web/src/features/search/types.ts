@@ -1,5 +1,5 @@
-import { Character } from "@/entities/character/types";
-import { Episode } from "@/entities/episode/types";
+import { type Character } from "@/entities/character";
+import { type Episode } from "@/entities/episode";
 import { NormalizedData } from "@/shared/types/normalized-data";
 import { AxiosError } from "axios";
 

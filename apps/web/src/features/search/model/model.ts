@@ -1,6 +1,6 @@
 import { Category } from "../constants";
 import { fetchSuggestions } from "./suggestion";
-import { createEvent, createStore, sample, split } from "effector";
+import { createEvent, createStore, sample } from "effector";
 import { debounce } from "patronum/debounce";
 
 const DEBOUNCE_DELAY = 300;
