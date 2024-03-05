@@ -4,7 +4,7 @@ import { NormalizedData } from "@/shared/types/normalized-data";
 import { AxiosError } from "axios";
 
 export type SuggestionsPayload = {
-  error: AxiosError<unknown> | null;
+  error: AxiosError<unknown> | null | unknown;
   pending: boolean;
   result: NormalizedData<Character | Episode | Location> | null;
 };

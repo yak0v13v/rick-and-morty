@@ -3,7 +3,6 @@ import { $suggestions } from "../../model/suggestion";
 import { SuggestionCard } from "./suggestion-card/suggestion-card";
 import { ErrorIcon } from "@/shared/ui/error-icon";
 import { Spinner } from "@/shared/ui/spinner";
-import { isAxiosError } from "axios";
 import { useStoreMap, useUnit } from "effector-react";
 import { Fragment } from "react";
 
@@ -57,11 +56,14 @@ const Suggestions = () => {
     );
   }
 
-  if (payload?.error) {
+  if (payload?.error && typeof payload.error === "object") {
+    const error = payload.error;
     return (
       <div className={styles.container}>
         <ErrorIcon
-          text={payload.error.status === 404 ? "Not Found" : "Error"}
+          text={
+            "status" in error && error.status === 404 ? "Not Found" : "Error"
+          }
         />
       </div>
     );
